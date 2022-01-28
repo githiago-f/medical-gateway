@@ -21,6 +21,15 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     semi: ['error', 'always'],
     'comma-dangle': ['error', 'always-multiline'],
-    quotes: ['error', 'single']
+    quotes: ['error', 'single'],
+    indent: ['error', 2],
+    'dot-notation': 'error',
+    eqeqeq: 'error',
+    'no-return-await': 'error',
+    'eol-last': ["error", "always"],
+    'newline-per-chained-call': ['error', { ignoreChainWithDepth: 2 }],
+    'no-extra-parens': 'error',
+    'no-mixed-spaces-and-tabs': 'error',
+    'object-curly-newline': ["error", { "multiline": true }]
   },
 };
