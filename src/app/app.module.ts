@@ -8,7 +8,10 @@ import { PatientsController } from './http/patients/patients.controller';
       {
         name: 'PATIENTS',
         transport: Transport.TCP,
-        options: {port: 3002},
+        options: {
+          host: 'patients',
+          port: 3002,
+        },
       },
     ]),
   ],

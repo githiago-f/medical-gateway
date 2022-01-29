@@ -1,15 +1,21 @@
-import { Controller, Get, Inject } from '@nestjs/common';
+import { Controller, Get, Inject, Logger } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 
 @Controller('patients')
 export class PatientsController {
+  private readonly LOG = new Logger(PatientsController.name);
+
   constructor(
     @Inject('PATIENTS')
     private readonly client: ClientProxy
   ) {}
 
   async onApplicationBootstrap() {
-    await this.client.connect();
+    try {
+      await this.client.connect();
+    } catch(e) {
+      this.LOG.error(e);
+    }
   }
 
   @Get()
