@@ -1,8 +1,14 @@
-import { Controller, Get, Inject, Logger } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Inject,
+  Logger,
+  OnApplicationBootstrap,
+} from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
 
 @Controller('patients')
-export class PatientsController {
+export class PatientsController implements OnApplicationBootstrap {
   private readonly LOG = new Logger(PatientsController.name);
 
   constructor(
